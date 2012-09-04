@@ -6,7 +6,7 @@
 
     <groupId>org.graylog2</groupId>
     <artifactId>gelfj</artifactId>
-    <version>0.9.1-SNAPSHOT</version>
+    <version>0.9.1.0</version>
     <packaging>jar</packaging>
 
     <name>gelfj</name>
@@ -35,7 +35,34 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    
+    <pluginRepositories>
+	<pluginRepository>
+	     <id>bb-dev-nexus</id>
+	     <url>http://127.0.0.1:8081/nexus/content/groups/public/</url>
+	</pluginRepository>
+    </pluginRepositories>
 
+    <repositories>
+	<repository>
+		<id>bb-dev-nexus</id>
+	         <url>http://127.0.0.1:8081/nexus/content/groups/public/</url>
+	</repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goal>jar</goal>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
     <build>
         <plugins>
             <plugin>
